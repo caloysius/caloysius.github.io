@@ -1,0 +1,217 @@
+<html>
+	<head>
+		<title>A glimpse at the UK driving test data</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<base href="//caloysius.github.io/" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/jquery-3.6.0.min.js"></script>
+		<script>
+		$.get("sidebar.html", function(data){
+			$("#nav-placeholder").replaceWith(data);
+		});
+		</script>
+	</head>
+	<body class="is-preload">
+
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+							<!-- Header -->
+								<header id="header">
+									<a href="index.html" class="logo"><strong>Article</strong> by Carlin Aloysius</a>
+									<ul class="icons">
+                                        <li><a href="https://www.linkedin.com/in/carlin-aloysius-96b691a2/" class="icon brands fa-linkedin"><span class="label">LinkedIn</span></a></li>
+										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+									</ul>
+								</header>
+
+								<a href="#" class="image"><img src="images/LinkedinBlog/1.jpeg" alt="Image" height="570" width="950" /></a>
+
+							<!-- Content -->
+								<section>
+									<header class="main">
+										<h1>My Journey with the BCS BA Foundation Certification</h1>
+									</header>
+
+									<p> I recently booked a driving test to get my UK license. 
+                                        These tests are conducted all year round by the Driver and Vehicle Standards Agency (DVSA) 
+                                        at its test centres all over the country. My current driving license is from India and my 
+                                        experience with that  test was really good. It was more or less a cakewalk for me and therefore, 
+                                        I was pretty confident of clearing the UK driving test in my first attempt. However, amidst  a 
+                                        conversation, several of my friends mentioned the level of difficulty of the UK’s driving tests 
+                                        and how only a  small margin of drivers clear it in their first attempt. To be honest, this piece of 
+                                        information took a slight hit at my confidence. However, before going down the alley filled with 
+                                        self-doubts and loss of morale, I decided to take an objective look at the driving tests in the UK. 
+                                        Fortunately, the DVSA website provides sufficient data to facilitate my curiosity. These data sets 
+                                        contain year-wise data for the total tests conducted and total passes per gender for each of the 
+                                        centres. Along with the same, I also gathered some additional datasets specifically for first-time 
+                                        test takers, pass rates for automatic vehicles and another indicating their ethnicity. Ethnicity 
+                                        data consisted of pass percentage aggregate for each year while first-time test-taker data, in 
+                                        addition, contained the number of zero faults made by both genders.<p>
+	
+                                    <p>A closer look at these data would give me an opportunity to validate the narrative I heard 
+                                        from my friends. Therefore, I decided to perform a preliminary analysis using my favourite data 
+                                        visualiser - Microsoft Power BI. One of the most interesting elements in Power BI is its ability 
+                                        to create interactive dashboards. Further, relations can be easily created between multiple data 
+                                        sources to generate quick and meaningful plots that allow dynamic interactions. But, before I delve 
+                                        into data cleaning and analysis, it is critical to formulate the objectives and questions that are to 
+                                        be answered. I believe creating an Aims grid would provide a concise and focused route map for the 
+                                        whole project.</p>
+
+                                        <table>
+                                            <tr>
+                                              <th>Purposes/ Benefits</th>
+                                              <th>Clients/ Stakeholders</th>
+                                            </tr>
+                                            <tr>
+                                              <td>
+                                                <ul>
+                                                  <li> Average pass rate.</li>
+                                                  <li>Analyse the correlation between the overall pass rate and the gender of the driver.</li>
+                                                  <li>Pass percentage based on the gender on the first attempt.</li>
+                                                  <li>Find passing rates for different ethnicities in the country.</li>
+                                                  <li>Analyse if specific months have an impact on the result of the driving test.</li>
+                                                </ul>
+                                              </td>
+                                              <td>
+                                                <ul>
+                                                    <li>Primary stakeholders are pupils, instructors, examiners and DVSA.</li>
+                                                    <li>Secondary stakeholders could be friends, family, employers, other road users, government etc.</li>
+                                                </ul>
+                                              </td>
+                                            </tr>
+                                            <tr>
+                                              <td>End Result</td>
+                                              <td>Success Criteria</td>
+                                            </tr>
+                                            <tr>
+                                                <td>
+                                                    An interactive Dashboard that would provide data-driven insights about the relation between gender and pass rate. 
+                                                </td>
+                                                <td>
+                                                    <ul>
+                                                        <li>Dashboard providing insight into whether any bias based on gender exists.</li>
+                                                        <li>The stakeholders will be able to know if selecting a particular test centre further increases the chance of passing the driving test. </li>
+                                                    </ul>
+                                                </td>
+                                            </tr>
+                                          </table>
+   
+                                    <p>Essentially, I am trying to find if there are other factors besides driving skills that influence the results of a driving test. 
+                                        However, the vast data given by DVSA are not in a format suitable for creating plots. So the foremost thing was 
+                                        to parse these files and  tabulate the data into a more ‘plottable’ format. I used a python script to do the 
+                                        same. It was somewhat a tedious task due to the non-uniform formatting. If the reader is interested in getting my 
+                                        pre-processed data, they can get it from here.  With this data, I created  a dashboard to understand it better, 
+                                        make relations and consolidate values based on features to bring out conclusive ideas from them. The data required 
+                                        for analyses has been allocated into four different tables. The four different tables relate to (1) overall pass 
+                                        percentage (2) automatic vehicle pass percentage (3) pass based on gender and ethnicity (4) the number of faults 
+                                        in the first time pass again based on gender from 2007-2021 for each of the test centres. </p>
+
+                                        <a href="#" class="image"><img src="articles/professional/images/dashboard1.png" alt="Image" height="480" width="640" /></a>
+					   
+                                    <p> Dashboard 1 is a visual representation of the  overall pass percentage dataset for each of the centres from the year 
+                                        2007-2021. The dashboard consists of two slicers and five plots and can be downloaded here. The very first 
+                                        slicer is for selecting a particular year, followed by the slicer for each centre. The percentages shown in 
+                                        each of the plots are the median of the values for all months in a year. Median was chosen to avoid any 
+                                        outliers and to have a robust estimate of the expected pass percentage.</p>
+                                    
+                                    <p>I started by having a look at the median pass percentage of each year for all 
+                                        centres combined. This plot will give a clear indication of the nationwide pass percentage and 
+                                        also a peek if the agency has relaxed its standard over the years. Further, I plotted the pass 
+                                        percentage of both genders separately to see if sex influences the metric. From the plot, we can 
+                                        see that the overall pass percentage stayed nearly the same throughout all years and there is 
+                                        almost a constant difference between both genders.  The almost constant pass percentage over the 
+                                        years indicate that the DVSA standards have been the same for the period considered. Though I 
+                                        checked the trend with automatic vehicle pass percentages, I couldn’t find anything different.</p>
+
+                                        <a href="#" class="image"><img src="articles/professional/images/dashboard2.png" alt="Image" height="480" width="640" /></a>
+                                    
+                                    <p>Now since I understood that there exists a difference between the pass percentage of men and women,  
+                                        I wanted to see if the same trend exists for first-timers as well. I kind of wished for an opposite 
+                                        trend for this chart. But to my disappointment, I witnessed the same trend for first-timers as well. 
+                                        Throughout the years, the data shows that males outperform females. Additionally, more male drivers 
+                                        have managed to pass the driving test in their first attempts with zero faults than female drivers. 
+                                        Personally, I feel, one of the reasons for men to outperform women in driving tests might be the 
+                                        natural affinity of the gender towards mechanical devices from a young age. Though there still exists 
+                                        the prenotion of men being better drivers, the number of female drivers taking the test has increased 
+                                        in the past couple of decades. This is evidently seen from the plot given in Figure 2. The drop in 
+                                        numbers from the year 2020 is an obvious aftereffect of the pandemic.</p>
+
+                                    <p>Again, being an immigrant in the UK, I got too curious to see whether ethnicity affects the pass 
+                                       percentage. To my surprise and relief, there was no  indication in the data of any such differences. 
+                                       If we take a closer look at the test data based on ethnicity, the majority of the test takers belong to 
+                                       the ‘no preference’ or “prefer not to say” category. Apart from them, the rest of the data looks like an 
+                                       equal distribution amongst various ethnicities: i.e., no specific ethnicity is at a disadvantage.</p>
+
+                                       <a href="#" class="image"><img src="articles/professional/images/dashboard3.png" alt="Image" height="480" width="640" /></a>
+                                    
+                                    <p>I don’t know why, but the results so far motivated me to see if picking a particular centre would be beneficial. 
+                                        Dashboard 2 investigates the answer to this question. Since there are numerous test centres, 
+                                        I thought of plotting the data from the top and bottom five centres when sorted based on pass percentage. 
+                                        I intended to see if there is a significant difference between the top and bottom five. If there isn't, then 
+                                        there is no point in checking for the other centres. I used the ‘Top N’ function in Power BI to filter the data 
+                                        for the top and bottom five test centres. I was expecting a trend similar to the national median. But to my 
+                                        surprise, the results for the top five centres were 12 percent higher than the national average of 49.8% 
+                                        (shown in chart 1 of dashboard 2). However, the bottom 5 had their median pass percentage (50.45%) almost 
+                                        equal to the national median. These inferences led me to include the population density for each region into 
+                                        the existing data for the 10 centres. This would help deduce if there is any correlation between the population 
+                                        density and the pass percentages. My thought was if there are fewer people, then correspondingly traffic and the 
+                                        number of junctions will also be less. This reduction would mean that driving in these places may be relatively easy. </p>
+
+                                    <p>The top five centres include Llandrindod (20 persons per sq km), Malton (2937per sq km), 
+                                        Whitby (875.4 per sq km), Dorchester (133 per sq km), Brecon (25 per sq km). The bottom five test 
+                                        centres included Gairloch (220.9 per sq km), Dorchester county town (13 per sq km), Oxford (Kassam Stadium, 
+                                        3270 per sq km), Halifax Maltings (1077 per sq km), Inverness (Longman drive, 2958.2 per sq km). It can be 
+                                        seen that the top and bottom five, both contain high and low populated regions. Hence, it cannot be conclusively 
+                                        said whether there is a correlation between pass percentage and population density in the region of the test 
+                                        centres. Further, when we plot the graph for pass percentages in the first attempt throughout years it shows a 
+                                        somewhat straight line with an overlap of both the genders. So I am still curious about the possible difference 
+                                        from the national median. This led me to check if the test-taking month had any influence on the pass percentage. 
+                                        However, I was not able to find any such trend based on the months. Though there was a drop in percentage in 
+                                        February for all  top five centres, the rest of the year looked more or less the same. Similarly, for the bottom 
+                                        five, test-taking month never influenced the outcome. </p>
+                                    
+                                    <p>In short, the dashboards were created to fulfil each of the objectives stated in the AIMS Grid as 
+                                        well as provide a broad perspective on the driving test results based on various factors. 
+                                        The other benefit of the interactive characteristic is that the stakeholders can retrieve data 
+                                        and visualisation based on specific years and centres from the dashboard. The object introspection
+                                        shows that the stories I heard were true and are now backed with evidence. The whole process has
+                                        made me more mindful of the challenges in the UK driving test. Irrespective of the results 
+                                        obtained, I strongly believe extra efforts and proper guidance from a great instructor will help 
+                                        one go that extra mile and clear the test.</p>
+
+								</section>
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+				<div id="nav-placeholder"></div>
+
+			</div>
+
+		<!-- Scripts -->
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src="assets/js/jquery-3.6.0.min.js"></script>
+		<script>
+		$.get("sidebar.html", function(data){
+			$("#nav-placeholder").replaceWith(data);
+		});
+		</script>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+		<script data-cfasync="false" type="text/javascript" src="assets/js/form_submission.js"></script>
+	</body>
+</html>
